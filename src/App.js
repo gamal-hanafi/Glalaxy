@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes,BrowserRouter as Router } from 'react-router-dom';
+import Allplanets from './allPlanets';
+import Astronaut from './astronaut';
+import './css/App.css';
+import Earth from './earth';
+import Mars from './Mars';
+import Main from './main';
+import Navbar from './Navbar';
+import Planets from './Planets';
+import Skills from './Skills';
+import SpaceGames from './spaceGames';
+import Animation from './animation';
+import GetTouch from './getTouch';
+import Footer from './footer';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Navbar/>
+      <Main/>
+      <Skills/>
+      <Routes>
+        <Route path='*' element={<Planets/>}>
+          <Route path='earth' element={<Earth/>}/>
+          <Route path='jupiter' element={<Mars/>}/>
+          <Route path='' element={<Allplanets  />}/>
+        </Route>
+      </Routes>
+      <Astronaut/>
+      <SpaceGames/>
+      <Animation/>  
+      <GetTouch/>
+      <Footer/>
+    </Router>
+    </>
   );
 }
 

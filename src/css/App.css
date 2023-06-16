@@ -1,0 +1,932 @@
+html{
+  --main-color:#facc15;
+  --main-transition:.5s;
+}
+/* Start Nav */
+/* Nav link */
+.link{
+  padding:7px 25px;
+}
+.link::after, .link::before{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: var(--main-color);
+  top: 0;
+  left: 0;
+  transition: var(--main-transition);
+  width: 100%;
+  height: 100%;
+}
+
+.link::after{
+  border-width:0 2px;
+  transform: scale(1,0);
+  transform-origin: top right;
+}
+.link::before{
+  border-width: 2px 0;
+  transform: scale(0,1);
+  transform-origin: top left;
+}
+.link:hover::after, .link:hover::before{
+  transform: scale(1,1);
+}
+.icons{
+    z-index: 2;
+    position: relative;
+}
+.link-anchor1{
+    margin-left: 5px!important;
+}
+.link-anchor{
+    border-radius: 50%;
+    border: 2px dashed #facc15;
+    width: 35px;
+    height: 35px;
+    color: #facc15;
+    text-align: center;
+    line-height: 35px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    transition: .5s;
+  }
+
+  .link-anchor:hover{
+    background-color: #facc15;
+    color: white;
+    box-shadow: 0 0 .75rem var(--main-color);
+  }
+  .link-connect{
+    padding: 10px 20px;
+    border: 2px dashed var(--main-color);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    color: var(--main-color);
+    background-color: var(--main-color);
+    transition: .5s;
+    box-shadow: 0 0 .75rem var(--main-color);
+    color: white;
+  }
+  .link-connect:hover{
+    color: white;
+    box-shadow: 0 0 0 var(--main-color);
+  }
+  /* START MAIN TITLE */
+.main-title{
+  width: fit-content;
+  color:#111827;
+  margin:0 auto 50px;
+  padding: 0px 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+.main-title::before{
+  content:attr(data-text);
+  position: absolute;
+  width: 10%;
+  color:var(--main-color);
+  overflow: hidden;
+  border-right: 4px solid var(--main-color);
+  white-space: nowrap;
+  animation: text 5s linear infinite;
+}
+/* END MAIN TITLE */
+
+/* Mega menu */
+
+
+.menu {
+  position: relative;
+}
+.menu .mega-menu{
+  background-color: black;
+  position: absolute;
+  width: 450px;
+  border: 2px solid var(--main-color);
+  padding: 10px;
+  margin-top: 20px;
+  transform: scale(1,0);
+  transform-origin: 50% 0%;
+  transition: var(--main-transition);
+
+}
+.menu .mega-menu ul{
+  width: 33%;
+  float: left;
+}
+.menu .mega-menu ul li:first-child a{
+  border-bottom: 1px dotted var(--main-color);
+  padding: 5px 10px;
+}
+.menu .mega-menu ul li a{
+  color: var(--main-color);
+  transition: var(--main-transition);
+}
+.menu .mega-menu ul li:not(:first-child) a{
+  display: inline-block;
+}
+.menu .mega-menu ul li:first-child a:hover{
+  border-bottom: 1px solid var(--main-color);
+  padding: 5px 20px;
+}
+.menu .mega-menu ul li a:hover{
+  transform: scale(1.1,1.1);
+}
+.menu:hover .mega-menu{
+  transform: scale(1,1);
+}
+/* End Mega menu */
+/* End Nav */
+/* Start Main Page */
+.main{
+  background-image: url("../imgs/planet-07.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 3;
+}
+.main::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.425) 0%, rgba(0, 0, 0, 0.637) 100%);    z-index: -1;
+
+}
+.sun{
+  height: 80px;
+  width: 80px;
+  background-image: url("../imgs/yellow-sun-light-up-free-png.webp");
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* Mercury Planet */
+.mercury{
+  height: 17px;
+  width: 17px;
+  background: url("../imgs/mercury.png");
+  animation: orbit2 2s linear infinite;
+
+}
+.planet p{
+  color: white;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+}
+.mercury-outline,.venus-outline,.earth-outline,.mars-outline,.jupiter-outline,.saturn-outline,.urans-outline,.neptune-outline{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px dotted #ddd9;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+}
+.outline1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mercury-outline{
+  height: 130px;
+  width: 130px;
+
+}
+/* Venus  */
+.venus{
+  height: 24px;
+  width: 24px;
+  background: url("../imgs/venus.png");
+  animation: orbit3 10s linear infinite;
+}
+.venus-outline{
+  height: 180px;
+  width: 180px;
+}
+/* Earth */
+.earth{
+  height: 26px; /* + 10 */
+  width: 26px;
+  background: url("../imgs/earth1.webp");
+  animation: orbit4 20s linear infinite; 
+}
+.earth-outline{
+  height: 230px; /* + 60 */
+  width: 230px;
+}
+.moon{
+  height: 10px; /* + 10 */
+  width:  10px;
+  background: url("../imgs/a101e22fc458c1110d418ee309f240c8.png");
+  border-radius: 50%;
+  background-size: cover;
+  animation: orbit10 3s linear infinite; 
+}
+.moon-outline{
+  height: 40px; /* + 60 */
+  width: 40px;
+  border-radius: 40px;
+  border: 1px dotted white;
+  position: absolute;
+
+}
+
+/* Mars */
+
+.mars{
+  height: 23px; /* + 10 */
+  width: 23px;
+  background: url("../imgs/mars.png");
+  animation: orbit5 30s linear infinite; 
+}
+.mars-outline{
+  height: 280px; /* + 60 */
+  width: 280px;
+}
+
+/* Mars */
+
+.jupiter{
+  height: 35px; /* + 10 */
+  width: 35px;
+  background: url("../imgs/juptier.png");
+  animation: orbit6 40s linear infinite; 
+}
+.jupiter-outline{
+  height: 330px; /* + 60 */
+  width: 330px;
+}
+/* saturn */
+
+.saturn{
+  height: 24px; /* + 10 */
+  width: 24px;
+  background: url("../imgs/saturn.png");
+  animation: orbit7 50s linear infinite; 
+}
+.saturn-outline{
+  height: 380px; /* + 60 */
+  width: 380px;
+}
+
+/* urans */
+.urans{
+  height: 23px; /* + 10 */
+  width: 23px;
+  background: url("../imgs/uranus.png");
+  animation: orbit8 60s linear infinite; 
+}
+.urans-outline{
+  height: 430px; /* + 60 */
+  width: 430px;
+}
+
+/* neptune */
+
+.neptune{
+  height: 24px; /* + 10 */
+  width: 24px;
+  background: url("../imgs/neptune.png");
+  animation: orbit9 70s linear infinite; 
+}
+.neptune-outline{
+  height: 480px; /* + 60 */
+  width: 480px;
+}
+/* Animations */
+@keyframes orbit2 {
+  from{
+      transform:rotate(0deg) translate(65px) rotate(0deg);
+  }
+  to{
+      transform:rotate(360deg) translate(65px) rotate(-360deg);
+  }
+}
+@keyframes orbit3 {
+  from{
+      transform:rotate(0deg) translate(90px) rotate(0deg);
+  }
+  to{
+      transform:rotate(360deg) translate(90px) rotate(-360deg);
+  }
+}
+@keyframes orbit4 {
+  from{
+      transform:rotate(0deg) translate(115px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(115px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit5 {
+  from{
+      transform:rotate(0deg) translate(140px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(140px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit6 {
+  from{
+      transform:rotate(0deg) translate(165px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(165px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit7{
+  from{
+      transform:rotate(0deg) translate(190px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(190px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit8 {
+  from{
+      transform:rotate(0deg) translate(215px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(215px) rotate(-360deg);
+  }
+}
+
+
+@keyframes orbit9{
+  from{
+      transform:rotate(0deg) translate(240px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(240px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit10{
+  from{
+      transform:rotate(0deg) translate(20px) rotate(0deg); /* +30*/
+  }
+  to{
+      transform:rotate(360deg) translate(20px) rotate(-360deg);
+  }
+}
+.planet{
+  box-shadow: -4px 2px 56px #f9c05f;
+  position:absolute;
+  border-radius: 50%;
+  background-size: cover;
+}
+/* End Main Page */
+
+/* Arstraount */
+.astronaut{
+  background-image: url("../imgs/design-features.webp");
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+}
+.astronaut::before{
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  z-index: -1;
+}
+/* Space-Games */
+.space-box{
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 50%), 0 2px 6px 0 rgb(0 0 0 / 60%);
+  position: relative;
+  z-index: 2;
+}
+.space-box::before ,.space-box::after{
+  content: "";
+  position: absolute;
+  width:50%;
+  height: 100%;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.space-box-one::before,.space-box-one::after{ 
+  background-color: rgba(23, 135, 224,.6);
+}
+.space-box-two::before,.space-box-two::after{
+  background-color: rgb(0 150 136 / 60%);
+}
+.space-box-three::before,.space-box-three::after{
+  background-color: rgb(244 64 54 / 60%);
+}
+.space-box::after{
+  left:0;
+  top:-100%;
+}
+.space-box::before{
+  left: 50%;
+  bottom:-100%;
+}
+.space-box:hover::after{
+  top: 0;
+}
+.space-box:hover::before{
+  bottom:0;
+}
+
+/* Start line Animation*/
+.line{
+  margin-top: 20px;
+  height: 2px;
+  background-color: var(--main-color);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px var(--main-color);
+}
+.line::after,.line::before{
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 100%;
+ background-color: #111827;
+}
+.line::before{
+  left: 80%;
+  animation: move1 1s linear infinite;
+}
+.line::after{
+  animation: move2 1s linear infinite;
+}
+
+/* Start animation */
+
+/* Start animation */
+.animation{
+  position: relative;
+  height: 150px;
+}
+.animation .heat{
+  width: 30px;
+  height: 150px;
+  position: absolute;
+  border-radius: 19px;
+  top: -25%;
+}
+.animation .heat1{
+  background-color: #DA9F5B;
+  left: 60px;
+  animation: heat1 10s linear infinite;
+  box-shadow: 0px 0px 10px var(--main-color);
+}
+.animation .heat2{
+  background-color: #dd3315;
+  right: 60px;
+  animation: heat2 10s linear infinite;
+  animation-delay: 5s;
+  box-shadow: 0px 0px 10px #dd3315;
+}
+.animation img{
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  left:90px;
+  top: 0;
+  animation: ball 10s linear infinite;
+  animation-delay: 1s;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px white;
+}
+/* End animation */
+/* Sart Planets boxes */
+.box{
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem black;
+  overflow: hidden;
+  display: flex;
+  background-size: cover;
+  height: 300px;
+}
+.box:first-child{
+  background-image: url("../imgs/earth-gb8937c7df_1280.jpg");
+}
+.box:nth-child(2){
+  background-image: url("../imgs/neptune-g8793ee7a2_1280.jpg");
+}
+.box:nth-child(3){
+  background-image: url("../imgs/jupiter-gb36e5994d_1280.jpg");
+}
+.box:nth-child(4){
+  background-image: url("../imgs/mercury-ga871b5c9d_640.png");
+}
+.box:nth-child(5){
+  background-image: url("../imgs/astronomy-g3a6b7b9b5_1280.jpg");
+}
+.box:last-child{
+  background-image: url("../imgs/mars-gb2f6013a9_1280.png");
+}
+.box img{
+  transition: .5s;
+}
+.box:hover img{
+  transform: scale(1.1);
+}
+.layer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,.1),#fb923c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: .5s;
+}
+.box:hover .layer{
+  transform: translateY(0%);
+}
+
+/* End Planets boxes */
+
+/* Start Earth And Mars Pages */
+.planet1{
+  display: flex;
+  flex-direction: column;
+}
+.container1{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #182357;
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px #182357,-5px -5px 10px #182357;
+}
+.planet-earth .loader{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  animation: loaderAn 4s linear infinite;
+}
+.planet-earth .loader::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background:linear-gradient(to top,transparent,rgba(0,255,249,0.4));
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+}
+.planet-earth .loader::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  background:#00fff9;
+  box-shadow: 0 0 10px #00fff9,0 0 20px #00fff9,0 0 30px #00fff9,0 0 40px #00fff9,0 0 50px #00fff9
+  ,0 0 60px #00fff9,0 0 70px #00fff9,0 0 80px #00fff9,0 0 90px #00fff9,0 0 100px #00fff9;
+  border-radius: 50%;
+}
+.planet-earth .loader span{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #182357;
+  border-radius: 50%;
+}
+.earth1{
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: url("../imgs/earth.jpg");
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: inset 0 0 20px #03a9f4,
+  0 0 120px #03a9f4;
+  animation: animateEarth 20s linear infinite;
+}
+@keyframes animateEarth {
+  0%{
+      background-position: 0;
+  }
+  100%{
+      background-position: 162.5%;
+  }
+  
+}
+@keyframes loaderAn {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+  
+}
+
+
+/* Mars */
+
+.container2{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #190703;
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px #182357,-5px -5px 10px #182357;
+}
+.planet-mars .loader{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  animation: loaderAn 4s linear infinite;
+}
+.planet-mars .loader::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background:linear-gradient(to top,transparent,rgba(255,87,34,0.4));
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+}
+.planet-mars .loader::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  background:#ff5722;
+  box-shadow: 0 0 10px #ff5722,0 0 20px #ff5722,0 0 30px #ff5722,0 0 40px #ff5722,0 0 50px #ff5722
+  ,0 0 60px #ff5722,0 0 70px #ff5722,0 0 80px #ff5722,0 0 90px #ff5722,0 0 100px #ff5722;
+  border-radius: 50%;
+}
+.planet-mars  .loader span{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #190703;
+  border-radius: 50%;
+}
+.mars1{
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: url("../imgs/mars.jpg   ");
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: inset 0 0 20px #ff5722,
+  0 0 120px #ff5722 ;
+  animation: animateMars 6s linear infinite;
+}
+@keyframes animateEarth {
+  0%{
+      background-position: 0;
+  }
+  100%{
+      background-position: 162.5%;
+  }
+  
+}
+@keyframes animateMars {
+  0%{
+      background-position: 0;
+  }
+  100%{
+      background-position: -340px;
+  }
+  
+}
+@keyframes loaderAn {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+  
+}
+
+@media (max-width:600px) {
+  .earth1{
+      width: 170px;
+      height: 170px;
+  }
+  .planet-earth .loader{
+      width: 200px;
+      height: 200px;
+  }
+  .mars1{
+      width: 170px;
+      height: 170px;
+  }
+  .planet-mars .loader{
+      width: 200px;
+      height: 200px;
+  }
+}
+/* End Earth And Mars Pages */
+/* Start second Title */
+/* START MAIN TITLE */
+.sec-title{
+  width: fit-content;
+  border: 2px solid #fff;
+  font-size:30px;
+  margin:0 auto 50px;
+  padding: 0px 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+.sec-title::before,.sec-title::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  transition: .4s;
+}
+.sec-title::after{
+  right: -30px;
+}
+.sec-title::before{
+  left: -30px;
+}
+.sec-title:hover{
+  background-color: var(--main-color);
+  transition-delay: .35s;
+  border-color: transparent;
+  color: #fff;
+}
+.sec-title:hover::after{
+  right: 0;
+  opacity: 0;
+}
+.sec-title:hover::before{
+  left: 0;
+  opacity: 0;
+}
+/* Footer */
+.footer{
+  background-image: url("../imgs/subscribe.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}
+.footer::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.footer-info{
+  top: -70px;
+}
+/* END MAIN TITLE */
+/* End Get Touch */
+/* END animation */
+
+@media (max-width:700px) {
+  .main-title{
+    margin:0 auto 20px;
+    padding: 0px 10px;
+  }
+  .menu .mega-menu{
+    width: 300px;
+    left: -50%;
+    z-index: 5;
+    margin-top: 0;
+  }
+}
+/* Start title */
+@keyframes text{
+  
+  0%,10%,100%{
+      width: 0;
+  }
+  70%,90%{
+      width: 89%;
+  }
+}
+/* End title */
+/* Start line */
+@keyframes move2{
+  
+  0%,100%{
+      
+      left: -10%;
+  }
+  50%{
+      left:50%;
+  }
+}
+@keyframes move1{
+
+  0%,100%{
+      
+      left: 50%;
+  }
+  50%{
+      left:90%;
+  }
+} 
+/* End line */
+
+/* Start ball animation */
+/* Start Heat */
+@keyframes heat1{
+  
+  0%,100%{
+      left: 40px;
+  }
+  10%{
+      left: 60px;
+  }
+  20%,90%{
+      left: 40px;
+  }
+}
+@keyframes heat2{
+
+  0%,100%{
+      
+      right: 40px;
+  }
+  10%{
+      right: 60px;
+  }
+
+  20%,90%{
+      right: 40px;
+  }
+}
+@keyframes ball{
+
+  0%,100%{
+      
+      left: 90px;
+  }
+  50%{
+      left:calc(100% - 180px);
+  }
+}
+
+/* Start Media Moblie */
+@media (max-width:600px) {
+  .box{
+      height: 200px;
+  }
+
+}
+/* End Medai mobile */

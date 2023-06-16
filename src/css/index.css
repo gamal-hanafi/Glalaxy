@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Cairo";
+  src: url("../Font/Cairo-VariableFont_slnt\,wght.ttf");
+}
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+
