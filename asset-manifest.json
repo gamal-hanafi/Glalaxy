@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Glalaxy/static/css/main.c9b79549.css",
-    "main.js": "/Glalaxy/static/js/main.506efee2.js",
+    "main.css": "/Glalaxy/static/css/main.bf23c133.css",
+    "main.js": "/Glalaxy/static/js/main.e4da545e.js",
     "static/media/planet-02.png": "/Glalaxy/static/media/planet-02.00076d04ee9c8aca9dab.png",
     "static/media/planet-01.png": "/Glalaxy/static/media/planet-01.5b9ca36e13d392dc569f.png",
     "static/media/planet-09.png": "/Glalaxy/static/media/planet-09.41d44e335136ed7faa79.png",
@@ -42,11 +42,11 @@
     "static/media/slick.ttf": "/Glalaxy/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Glalaxy/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Glalaxy/index.html",
-    "main.c9b79549.css.map": "/Glalaxy/static/css/main.c9b79549.css.map",
-    "main.506efee2.js.map": "/Glalaxy/static/js/main.506efee2.js.map"
+    "main.bf23c133.css.map": "/Glalaxy/static/css/main.bf23c133.css.map",
+    "main.e4da545e.js.map": "/Glalaxy/static/js/main.e4da545e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9b79549.css",
-    "static/js/main.506efee2.js"
+    "static/css/main.bf23c133.css",
+    "static/js/main.e4da545e.js"
   ]
 }
